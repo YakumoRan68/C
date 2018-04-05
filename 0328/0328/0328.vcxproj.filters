@@ -15,28 +15,40 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="typecast.cpp">
+    <ClCompile Include="arithmatic1.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="prec.cpp">
+    <ClCompile Include="arithmatic2.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="cal_quad_eq.cpp">
+    <ClCompile Include="bit_op.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="mathh.cpp">
+    <ClCompile Include="bit_op2.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="if_else1.cpp">
+    <ClCompile Include="bit_shift.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="if_else2.cpp">
+    <ClCompile Include="char_var.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="if_else3.cpp">
+    <ClCompile Include="char_var1.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="condition.cpp">
+    <ClCompile Include="comp_op.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="escape.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="incdec.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="modulo.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="rational.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
