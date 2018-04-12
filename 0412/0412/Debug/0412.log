@@ -1,0 +1,5 @@
+﻿  dowhile_1.cpp
+d:\201804011\c\0412\0412\dowhile_1.cpp(9): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: 'scanf' 선언을 참조하십시오.
+  0412.vcxproj -> D:\201804011\C\0412\Debug\0412.exe
+  0412.vcxproj -> D:\201804011\C\0412\Debug\0412.pdb (Full PDB)
