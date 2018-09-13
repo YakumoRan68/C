@@ -385,3 +385,6 @@ ASALocalRun/
 
 # Local History for Visual Studio
 .localhistory/
+
+# Text file
+*.txt

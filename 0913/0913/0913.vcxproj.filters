@@ -18,5 +18,14 @@
     <ClCompile Include="fgetc.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="fputs.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="fputgets.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="fcopy1.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
