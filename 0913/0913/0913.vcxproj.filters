@@ -33,7 +33,19 @@
     <ClCompile Include="score3.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="binary.c">
+    <ClCompile Include="binary1.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="binary2.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="imagedisp.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="fseek1.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="fseek2.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
