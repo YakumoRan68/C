@@ -27,5 +27,11 @@
     <ClCompile Include="sort2.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="squeeze.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="strcat.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
