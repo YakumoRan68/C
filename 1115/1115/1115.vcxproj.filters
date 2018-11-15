@@ -18,5 +18,14 @@
     <ClCompile Include="calc.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="static_sum.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="inverse_char.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="primenum2.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
