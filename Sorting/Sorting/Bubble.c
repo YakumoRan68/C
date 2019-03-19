@@ -3,7 +3,7 @@
 
 main() {
 	int* ToSort = &sample_2;
-	printline("ÃÊ±â°ª : ", ToSort);
+	printline("ì´ˆê¸°ê°’ : ", ToSort);
 
 	for (int i = 1; i < 10; i++) {
 		for (int j = 0; j < 10 - 1; j++)
@@ -13,7 +13,7 @@ main() {
 		printf("\n");
 	}
 
-	printline("\nÃÖÁ¾°ª : ", ToSort);
+	printline("\nìµœì¢…ê°’ : ", ToSort);
 	getch();
 }
 

@@ -3,7 +3,7 @@
 
 main() {
 	int* ToSort = &sample_2;
-	printline("ÃÊ±â°ª : ", ToSort);
+	printline("ì´ˆê¸°ê°’ : ", ToSort);
 
 	int Max;
 	for (int i = 0; i < 9; i++) {
@@ -16,6 +16,6 @@ main() {
 		swap(&ToSort[Max], &ToSort[i]);
 	}
 
-	printline("\nÃÖÁ¾°ª : ", ToSort);
+	printline("\nìµœì¢…ê°’ : ", ToSort);
 	getch();
 }
