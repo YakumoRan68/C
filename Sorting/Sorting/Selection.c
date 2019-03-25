@@ -3,7 +3,7 @@
 
 main() {
 	int* ToSort = &sample_2;
-	printline("초기값 : ", ToSort);
+	printline("ToSort : ", ToSort);
 
 	int Max;
 	for (int i = 0; i < 9; i++) {
@@ -16,6 +16,6 @@ main() {
 		swap(&ToSort[Max], &ToSort[i]);
 	}
 
-	printline("\n최종값 : ", ToSort);
+	printline("\nSorted : ", ToSort);
 	getch();
 }

@@ -21,6 +21,9 @@
     <ClCompile Include="Selection.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Insertion.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lib.h">

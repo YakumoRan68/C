@@ -1,5 +1,9 @@
 #pragma once
 
+#define bool   _Bool
+#define FALSE  0
+#define TRUE   1
+
 void swap(int *a, int *b) {
 	int temp = *a;
 	*a = *b;
