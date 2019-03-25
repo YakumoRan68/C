@@ -2,7 +2,7 @@
 #include "lib.h"
 
 main() {
-	int* ToSort = &sample_2;
+	int* ToSort = GetRandomArray(10);
 	printline("ToSort : ", ToSort);
 
 	int Max;
@@ -13,9 +13,9 @@ main() {
 				Max = j;
 			}
 		}
-		swap(&ToSort[Max], &ToSort[i]);
+		Swap(&ToSort[Max], &ToSort[i]);
 	}
 
 	printline("\nSorted : ", ToSort);
-	getch();
+	EndMain();
 }

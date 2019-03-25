@@ -2,7 +2,7 @@
 #include "lib.h"
 
 main() {
-	int* ToSort = &sample_2;
+	int* ToSort = GetRandomArray(10);
 	printline("ToSort : ", ToSort);
 
 	bool flag = TRUE;
@@ -10,12 +10,12 @@ main() {
 		for (int j = i; j > 0; j--) {
 			flag = TRUE;
 			if (ToSort[j - 1] > ToSort[j]) {
-				swap(&ToSort[j - 1], &ToSort[j]);
+				Swap(&ToSort[j - 1], &ToSort[j]);
 				flag = FALSE;
 			}
 			if (flag) break;
 		}
 
 	printline("\nSorted : ", ToSort);
-	getch();
+	EndMain();
 }
