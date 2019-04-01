@@ -1,12 +1,11 @@
-#include <stdio.h>
 #include "lib.h"
 
 main() {
-	int* ToSort = GetRandomArray(10);
-	printline("ToSort : ", ToSort);
+	int* ToSort = GenerateRandomArray(ARRAYSIZE);
+	PrintLine("ToSort", ToSort);
 
 	bool flag = TRUE;
-	for (int i = 1; i < 10; i++) 
+	for (int i = 1; i < ARRAYSIZE; i++)
 		for (int j = i; j > 0; j--) {
 			flag = TRUE;
 			if (ToSort[j - 1] > ToSort[j]) {
@@ -16,6 +15,6 @@ main() {
 			if (flag) break;
 		}
 
-	printline("\nSorted : ", ToSort);
+	PrintLine("\nSorted", ToSort);
 	EndMain();
 }

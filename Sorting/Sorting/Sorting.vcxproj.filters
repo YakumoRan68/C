@@ -27,6 +27,15 @@
     <ClCompile Include="Merge.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Test.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Quick.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Heap.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lib.h">

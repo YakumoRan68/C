@@ -1,44 +1,50 @@
-#include <stdio.h>
 #include "lib.h"
 
-void Merge(int A[], int p, int q, int r) {
-	int i = p, j = q + 1, t = 1;
-	int temp[10];
+int MEMORY[ARRAYSIZE];
 
-	while (i <= q && j <= r) {
-		if (A[i] <= A[j])
-			temp[t++] = A[i++];
+void Merge(int list[], int left, int mid, int right) {
+	int i = left , j = mid + 1, k = left, l;
+
+	while (i <= mid && j <= right) {
+		if (list[i] <= list[j])
+			MEMORY[k++] = list[i++];
 		else
-			temp[t++] = A[j++];
+			MEMORY[k++] = list[j++];
 	}
 
-	while (i <= q) 
-		temp[t++] = A[i++];
+	if (i > mid) {
+		for (l = j; l <= right; l++)
+			MEMORY[k++] = list[l];
+	} else {
+		for (l = i; l <= mid; l++)
+			MEMORY[k++] = list[l];
+	}
 
-	while (j <= r) 
-		temp[t++] = A[j++];
-	
-	i = p; t = 1;
-	while (i <= r)
-		A[i++] = temp[i++];
-	
+	for (l = left; l <= right; l++) {
+		list[l] = MEMORY[l];
+	}
+
+	PrintArray(list);
+	PrintArray(MEMORY);
 }
 
-void MergeSort(int A[], int p, int r) {
-	if (p < r) {
-		int q = (p + r) / 2;
-		MergeSort(A, p, q);
-		MergeSort(A, q + 1, r);
-		Merge(A, p, q, r);
+void MergeSort(int list[], int left, int right) {
+	int mid;
+
+	if (left<right) {
+		mid = (left + right) / 2;
+		MergeSort(list, left, mid);
+		MergeSort(list, mid + 1, right);
+		Merge(list, left, mid, right);
 	}
 }
 
 main() {
-	int* ToSort = GetRandomArray(10);
-	printline("ToSort : ", ToSort);
+	int* ToSort = GenerateRandomArray(ARRAYSIZE);
+	PrintLine("ToSort", ToSort);
 	
-	MergeSort(ToSort, 0, 9);
+	MergeSort(ToSort, 0, ARRAYSIZE - 1);
 
-	printline("\nSorted : ", ToSort);
+	PrintLine("Sorted", ToSort);
 	EndMain();
 }

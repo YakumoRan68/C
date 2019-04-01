@@ -1,14 +1,13 @@
-#include <stdio.h>
 #include "lib.h"
 
 main() {
-	int* ToSort = GetRandomArray(10);
-	printline("ToSort : ", ToSort);
+	int* ToSort = GenerateRandomArray(ARRAYSIZE);
+	PrintLine("ToSort", ToSort);
 
 	int Max;
-	for (int i = 0; i < 9; i++) {
+	for (int i = 0; i < ARRAYSIZE - 1; i++) {
 		Max = i;
-		for (int j = i + 1; j < 10; j++) {
+		for (int j = i + 1; j < ARRAYSIZE; j++) {
 			if (ToSort[j] > ToSort[Max]) {
 				Max = j;
 			}
@@ -16,6 +15,6 @@ main() {
 		Swap(&ToSort[Max], &ToSort[i]);
 	}
 
-	printline("\nSorted : ", ToSort);
+	PrintLine("\nSorted", ToSort);
 	EndMain();
 }
