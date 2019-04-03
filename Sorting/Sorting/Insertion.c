@@ -1,3 +1,5 @@
+#include "lib.h"
+
 void Insertion(int* ToSort) {
 	bool flag = TRUE;
 	for (int i = 1; i < ARRAYSIZE; i++) {

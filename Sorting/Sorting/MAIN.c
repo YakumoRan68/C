@@ -1,17 +1,18 @@
-#include "Test.c"
-#include "Bubble.c"
-#include "Heap.c"
-#include "Insertion.c"
-#include "Merge.c"
-#include "Quick.c"
-#include "Selection.c"
+#include "lib.h"
 
-main() {
+void main() {
 	int* ToSort = GenerateRandomArray(ARRAYSIZE);
 	PrintLine("ToSort", ToSort);
 
-	Insertion(ToSort);
+	//Bubble(ToSort);
+	Heap(ToSort);
+	//Insertion(ToSort);
+	//Merge(ToSort);
+	//Quick(ToSort);
+	//Selection(ToSort);
 
-	PrintLine("\nSorted", ToSort);
-	EndMain();
+	PrintLine("Sorted", ToSort);
+
+	free(array);
+	getchar();
 }

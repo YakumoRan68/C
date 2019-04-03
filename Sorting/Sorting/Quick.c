@@ -1,3 +1,5 @@
+#include "lib.h"
+
 int Partition(int list[], int left, int right) {
 	int pivot = list[left], low = left, high = right + 1;
 

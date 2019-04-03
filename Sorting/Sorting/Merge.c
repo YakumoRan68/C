@@ -1,3 +1,5 @@
+#include "lib.h"
+
 int MEMORY[ARRAYSIZE];
 
 void MergeArray(int list[], int left, int mid, int right) {

@@ -1,3 +1,5 @@
+#include "lib.h"
+
 void Selection(int* ToSort) {
 	int Max;
 	for (int i = 0; i < ARRAYSIZE - 1; i++) {
