@@ -4,7 +4,7 @@ int GetParent(int x) {
 	return (x - 1) / 2;
 }
 
-void heap(int *data, int num) {
+void MakeHeap(int *data, int num) {
 	for (int i = 1; i<num; i++) {
 		int child = i;
 		while (child > 0) {
@@ -18,11 +18,11 @@ void heap(int *data, int num) {
 }
 
 void Heap(int* ToSort) {
-	heap(ToSort, ARRAYSIZE);
+	MakeHeap(ToSort, ARRAYSIZE);
 
 	for (int i = ARRAYSIZE - 1; i >= 0; i--) {
 		Swap(&ToSort[i], &ToSort[0]);
 
-		heap(ToSort, i);
+		MakeHeap(ToSort, i);
 	}
 }

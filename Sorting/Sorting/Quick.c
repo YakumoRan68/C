@@ -19,7 +19,28 @@ int Partition(int list[], int left, int right) {
 	return high;
 }
 
-void QuickSort(int list[], int left, int right) {
+int STACK[STACKSIZE];
+void quicksort(int *array, int left, int right) { //반복문 사용
+	int i = 0;
+
+	STACK[i++] = left;
+	STACK[i++] = right;
+
+	while (i > 0) {
+		right = STACK[--i];
+		left = STACK[--i];
+
+		if (left < right) {
+			int index = Partition(array, left, right);
+			STACK[i++] = left;
+			STACK[i++] = index - 1;
+			STACK[i++] = index + 1;
+			STACK[i++] = right;
+		}
+	}
+}
+
+void QuickSort(int list[], int left, int right) { //재귀문 사용
 	if (left < right) {
 		int q = Partition(list, left, right);
 
@@ -29,5 +50,6 @@ void QuickSort(int list[], int left, int right) {
 }
 
 void Quick(int* ToSort) {
-	QuickSort(ToSort, 0, ARRAYSIZE - 1);
+	//QuickSort(ToSort, 0, ARRAYSIZE - 1);
+	quicksort(ToSort, 0, ARRAYSIZE - 1);
 }
