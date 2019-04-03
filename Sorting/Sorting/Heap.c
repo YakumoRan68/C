@@ -1,5 +1,3 @@
-#include "lib.h"
-
 int GetParent(int x) {
 	return (x - 1) / 2;
 }
@@ -17,9 +15,7 @@ void heap(int *data, int num) {
 	}
 }
 
-main() {
-	int* ToSort = GenerateRandomArray(ARRAYSIZE);
-	PrintArray(ToSort);
+void Heap(int* ToSort) {
 	heap(ToSort, ARRAYSIZE); // 힙을 만든다. 
 
 	for (int i = ARRAYSIZE - 1; i >= 0; i--) {
@@ -29,7 +25,4 @@ main() {
 		// 맨마지막원소(가장큰원소)를 제외하고 다시 힙을 만든다. 
 		heap(ToSort, i);
 	}
-
-	PrintArray(ToSort);
-	EndMain();
 }

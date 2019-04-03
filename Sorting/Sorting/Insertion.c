@@ -1,11 +1,6 @@
-#include "lib.h"
-
-main() {
-	int* ToSort = GenerateRandomArray(ARRAYSIZE);
-	PrintLine("ToSort", ToSort);
-
+void Insertion(int* ToSort) {
 	bool flag = TRUE;
-	for (int i = 1; i < ARRAYSIZE; i++)
+	for (int i = 1; i < ARRAYSIZE; i++) {
 		for (int j = i; j > 0; j--) {
 			flag = TRUE;
 			if (ToSort[j - 1] > ToSort[j]) {
@@ -14,7 +9,5 @@ main() {
 			}
 			if (flag) break;
 		}
-
-	PrintLine("\nSorted", ToSort);
-	EndMain();
+	}
 }

@@ -1,8 +1,6 @@
-#include "lib.h"
-
 int MEMORY[ARRAYSIZE];
 
-void Merge(int list[], int left, int mid, int right) {
+void MergeArray(int list[], int left, int mid, int right) {
 	int i = left , j = mid + 1, k = left, l;
 
 	while (i <= mid && j <= right) {
@@ -35,16 +33,10 @@ void MergeSort(int list[], int left, int right) {
 		mid = (left + right) / 2;
 		MergeSort(list, left, mid);
 		MergeSort(list, mid + 1, right);
-		Merge(list, left, mid, right);
+		MergeArray(list, left, mid, right);
 	}
 }
 
-main() {
-	int* ToSort = GenerateRandomArray(ARRAYSIZE);
-	PrintLine("ToSort", ToSort);
-	
+void Merge(int* ToSort) {
 	MergeSort(ToSort, 0, ARRAYSIZE - 1);
-
-	PrintLine("Sorted", ToSort);
-	EndMain();
 }

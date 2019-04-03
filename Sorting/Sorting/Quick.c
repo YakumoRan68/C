@@ -1,5 +1,3 @@
-#include "lib.h"
-
 int Partition(int list[], int left, int right) {
 	int pivot = list[left], low = left, high = right + 1;
 
@@ -28,12 +26,6 @@ void QuickSort(int list[], int left, int right) {
 	}
 }
 
-main() {
-	int* ToSort = GenerateRandomArray(ARRAYSIZE);
-	PrintLine("ToSort", ToSort);
-
+void Quick(int* ToSort) {
 	QuickSort(ToSort, 0, ARRAYSIZE - 1);
-
-	PrintLine("Sorted", ToSort);
-	EndMain();
 }
