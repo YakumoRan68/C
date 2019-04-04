@@ -10,5 +10,8 @@ void Selection(int* ToSort) {
 			}
 		}
 		Swap(&ToSort[Max], &ToSort[i]);
+#if SHOWPROCESS
+		PrintArray(ToSort);
+#endif
 	}
 }

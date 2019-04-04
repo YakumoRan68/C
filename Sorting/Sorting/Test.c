@@ -2,8 +2,7 @@
 
 void Test() {
 	for (int i = 0; i < 1000; i++) {
-		PrintArray(GenerateRandomArray(ARRAYSIZE));
+		GenerateArray(ARRAYSIZE);
+		//PrintArray(GenerateArray(ARRAYSIZE));
 	}
-
-	ShowElapsed();
 }
