@@ -1,19 +1,19 @@
 #include "lib.h"
 
 //https://www.youtube.com/watch?v=MtQL_ll5KhQ 참고한 자료
-void MakeHeap(int list[], int size, int index) {
+void MakeHeap(int list[], int size, int index) { //
 	int max = index;
-	int child = 2 * index + 1; //왼쪽 자식
+	int child = 2 * index + 1; //왼쪽자식; child + 1 : 오른쪽 자식
 
-	//if (list[child] > list[max] || list[child++] > list[max]) max = child;
-	max = list[child] > list[max] ? child : list[child + 1] > list[max] ? child + 1 : max;
-	//왼쪽과 오른쪽의 자식들을 보고 가장 자기보다 큰 원소를 가지고 있는 인덱스를 찾음
+	max = child < size && list[child] > list[max] ? child : max;
+	max = ++child < size && list[child] > list[max] ? child : max;
+	//자식들을 보고 가장 자기보다 큰 원소를 가지고 있는 인덱스를 찾음
 
 	if (max != index) { //만약 같으면 자기자신가 가장 큰 원소를 가지고 있는것이 됨. 
 						//이후 재귀문을 한단계 빠져나옴. 가장 상위 스택 레벨에서도 위가 성립하면 최대 힙 구조가 된것.
 		Swap(&list[index], &list[max]); //큰 원소를 부모로 올리는 작업.
 
-		MakeHeap(list, size, max); //더 큰 원소를 가지고 있는 자식을 찾아 재귀적으로 함수 호출.
+		MakeHeap(list, size, max); //다음 레벨(트리 구조의 level)로 올라감.
 	}
 }
 
@@ -39,7 +39,7 @@ void makeheap(int list[], int size) { //최대 힙
 		if (list[child] > list[root]) { //자식 노드가 부모 노드보다 작아야 함
 			while (list[child] > list[root]) {
 				Swap(&list[root], &list[child]);
-				child = (child - 1) / 2;
+				child = (child - 1) / 2; //다음 레벨로 올라감
 			}
 		}
 	}
@@ -47,28 +47,24 @@ void makeheap(int list[], int size) { //최대 힙
 
 void heapsort(int list[]){ //반복문 사용
 	makeheap(list, ARRAYSIZE);
-	ShowState();
+
 	for (int i = ARRAYSIZE - 1; i >= 0; i--) {
 		Swap(&list[i], &list[0]);
-		//재귀적인 힙 구성에서, 부모 노드에서 자식노드를 탐색할 때
-		//가장 큰 값을 가진 인덱스를 찾아서 재귀적으로 
-		int j = 0, index;
+
+		int index = 0, child;
 
 		do {
-			index = (2 * j + 1); //왼쪽 자식의 인덱스
+			child = (2 * index + 1); //왼쪽자식
 
-			if (list[index] < list[index + 1] && index < (i - 1))
-				index++;
+			if (list[child] < list[child + 1] && child < (i - 1))
+				child++; //오른쪽자식과 비교하여 더 큰 자식의 인덱스를 구함
 
-			// if parent is smaller than child  
-			// then swapping parent with child  
-			// having higher value 
-			if (list[j] < list[index] && index < i)
-				Swap(&list[j], &list[index]);
+			if (list[index] < list[child] && child < i) //부모 노드가 자식 노드보다 작으면 교환
+				Swap(&list[index], &list[child]);
 
-			j = index;
+			index = child; //현재 노드의 위치를 저장하고 다음 레벨로 이동.
 
-		} while (index < i);
+		} while (child < i);
 	}
 }
 

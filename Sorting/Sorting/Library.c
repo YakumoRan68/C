@@ -54,7 +54,7 @@ void PrintLine() {
 }
 
 void ShowState() {
-	printf("총 교환/분할 횟수 : %d\n소요 시간 : %dms\n\n", count, clock()); //일단은 SHOWPROCESS를 꺼야 순수 연산시간에 대한 신뢰도가 높음. (벤치마킹 추가하면 제대로 출력될듯)
+	printf("총 교환/분할 횟수 : %d\n총 소요 시간 : %dms\n\n", count, clock()); //일단은 SHOWPROCESS를 꺼야 순수 연산시간에 대한 신뢰도가 높음. (벤치마킹 추가하면 제대로 출력될듯)
 }
 
 void PrintLineWithName(char *str) {

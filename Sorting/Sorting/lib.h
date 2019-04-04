@@ -6,14 +6,14 @@
 #define FALSE  0
 #define TRUE   1
 
-#define ARRAYSIZE 100
+#define ARRAYSIZE 20
 #define STACKSIZE 1024
 #define MAXLEVEL 300 //Quick.c 참고
 #define ELEMENTSPERLINE 12 //한 줄에 보일 원소의 갯수
 
-#define SHOWPROCESS FALSE //연산(교환/분할) 과정 보이기
+#define SHOWPROCESS TRUE //연산(교환/분할) 과정 보이기
 #define BENCHMARK FALSE //정렬 알고리즘 벤치마킹(미구현)
-#define ISRANDOM FALSE //고정된 값으로 실험하고 싶은경우 FALSE로
+#define ISRANDOM TRUE //고정된 값으로 실험하고 싶은경우 FALSE로
 
 extern int count;
 extern int* array;
