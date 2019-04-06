@@ -45,21 +45,29 @@ void PrintArrayInternal(int a[], bool IsHeap) {
 }
 
 void PrintArray(int SRC[]) {
+#if !NOARRAY
 	PrintArrayInternal(SRC, FALSE);
+#endif
 }
 
 void PrintHeap(int SRC[]) {
+#if !NOARRAY
 	PrintArrayInternal(SRC, TRUE);
+#endif
 }
 
 void PrintLine() {
+#if !NOLINE
 	printf("==========================================================================\n\n");
+#endif
 }
 
 void ShowState() {
-	printf("총 교환/분할 횟수 : %d\n총 소요 시간 : %dms\n\n", count, clock()); //일단은 SHOW_PROGRESS를 꺼야 순수 연산시간에 대한 신뢰도가 높음. (벤치마킹 추가하면 제대로 출력될듯)
+	printf("\n\n총 교환/분할 횟수 : %d\n총 소요 시간 : %dms\n\n", count, clock()); //일단은 SHOW_PROGRESS를 꺼야 순수 연산시간에 대한 신뢰도가 높음. (벤치마킹 추가하면 제대로 출력될듯)
 }
 
 void PrintLineWithName(char *str) {
+#if !NOLINE
 	printf("===============================%s===============================\n\n", str);
+#endif
 }
