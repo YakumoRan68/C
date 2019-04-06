@@ -3,23 +3,23 @@
 int MEMORY[ARRAYSIZE]; //O(n) 만큼의 추가 공간이 필요하다
 
 void MergeArray(int list[], int left, int mid, int right) {
-	int i = left, l;
+	int index = left;
 	int low = mid + 1;
 	int high = left;
 
-	while (i <= mid && low <= right) 
-		MEMORY[high++] = list[i] > list[low] ? list[low++] : list[i++];
+	while (index <= mid && low <= right) 
+		MEMORY[high++] = list[index] > list[low] ? list[low++] : list[index++];
 
-	if (i > mid) {
-		for (l = low; l <= right; l++)
-			MEMORY[high++] = list[l];
+	if (index > mid) {
+		for (int i = low; i <= right; i++)
+			MEMORY[high++] = list[i];
 	} else {
-		for (l = i; l <= mid; l++)
-			MEMORY[high++] = list[l];
+		for (int i = index; i <= mid; i++)
+			MEMORY[high++] = list[i];
 	}
 
-	for (l = left; l <= right; l++) 
-		list[l] = MEMORY[l];
+	for (int i = left; i <= right; i++) 
+		list[i] = MEMORY[i];
 
 #if SHOW_PROGRESS
 	PrintArray(list);
@@ -29,14 +29,13 @@ void MergeArray(int list[], int left, int mid, int right) {
 }
 
 void MergeSort(int list[], int left, int right) { //재귀문 사용
-	int mid;
+	if (left >= right) return;
 
-	if (left<right) {
-		mid = (left + right) / 2;
-		MergeSort(list, left, mid);
-		MergeSort(list, mid + 1, right);
-		MergeArray(list, left, mid, right);
-	}
+	int mid = (left + right) / 2;
+	MergeSort(list, left, mid);
+	MergeSort(list, mid + 1, right);
+	MergeArray(list, left, mid, right);
+	
 }
 
 void mergesort(int list[]) { //반복문 사용(Bottom-Up 알고리즘)
