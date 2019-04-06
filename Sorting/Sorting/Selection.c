@@ -1,17 +1,14 @@
 #include "lib.h"
 
-void Selection(int* ToSort) {
+void Selection(int list[]) {
 	int Max;
 	for (int i = 0; i < ARRAYSIZE - 1; i++) {
 		Max = i;
 		for (int j = i + 1; j < ARRAYSIZE; j++) {
-			if (ToSort[j] > ToSort[Max]) {
+			if (list[j] > list[Max]) {
 				Max = j;
 			}
 		}
-		Swap(&ToSort[Max], &ToSort[i]);
-#if SHOWPROCESS
-		PrintArray(ToSort);
-#endif
+		Swap(&list[Max], &list[i]);
 	}
 }

@@ -1,35 +1,30 @@
 #include "lib.h"
 
-#if SHOWPROCESS
-bool ISSHOWN = FALSE;
-#endif
 int Partition(int list[], int left, int right) {
-	int pivot = list[left], low = left, high = right + 1;
+	int pivot = list[left];
+	int low = left - 1;
+	int high = right + 1;
 
-	do {
-		do low++;
-		while (low <= right && list[low] < pivot);
-		do high--;
-		while (high >= left && list[high] > pivot);
+	while (TRUE) {
+		//do low++;
+		//while (low <= right && list[low] < pivot);
+		while (list[++low] < pivot); 
+		while (list[--high] > pivot); //조건문만으로 L과 R을 움직이는 것으로 최적화
+		
+		if (low >= high) break; //블록 탈출을 빨리 하는게 더 속도가 빠름.
 
-		if (low<high) 
-			Swap(&list[low], &list[high]);
-#if SHOWPROCESS
-		if (ISSHOWN)
-			PrintArray(list);
-		ISSHOWN = !ISSHOWN;
-#endif
-	} while (low<high);
-
-	Swap(&list[left], &list[high]);
+		Swap(&list[low], &list[high]);
+	} 
 
 	return high;
 }
 
 void quicksort(int list[]) { //반복문 사용
-	//주워진 메모리 공간을 스택구조처럼 사용하는 구조
+	//주워진 메모리 공간을 스택처럼 사용하는 구조
 	int STACK[STACKSIZE];
-	int i = 0, left = 0, right = ARRAYSIZE - 1;
+	int i = 0;
+	int left = 0;
+	int right = ARRAYSIZE - 1;
 
 	STACK[i++] = left;
 	STACK[i++] = right;
@@ -38,13 +33,13 @@ void quicksort(int list[]) { //반복문 사용
 		right = STACK[--i];
 		left = STACK[--i];
 
-		if (left < right) {
-			int index = Partition(list, left, right);
-			STACK[i++] = left;
-			STACK[i++] = index - 1;
-			STACK[i++] = index + 1;
-			STACK[i++] = right;
-		}
+		if (left >= right) continue; //블록 탈출을 빨리 하는게 더 속도가 빠름.
+
+		int index = Partition(list, left, right);
+		STACK[i++] = left;
+		STACK[i++] = index - 1;
+		STACK[i++] = index + 1;
+		STACK[i++] = right;
 	}
 }
 
@@ -61,12 +56,12 @@ void quicksort_nostack(int list[]) {
 		L = beg[i]; 
 		R = end[i] - 1;
 		if (L < R) {
-			piv = list[L];
+			piv = list[L]; //LR 피봇
 			while (L < R) { //TODO : sleep 주면 피봇이 움직이는 것도 보여줄 수 있을듯.
 				while (list[R] >= piv && L < R) R--; 
 				if (L < R) {
 					list[L++] = list[R];
-#if SHOWPROCESS
+#if SHOW_PROGRESS
 					PrintArray(list);
 #endif
 					count++;
@@ -74,7 +69,7 @@ void quicksort_nostack(int list[]) {
 				while (list[L] <= piv && L < R) L++; 
 				if (L < R) {
 					list[R--] = list[L];
-#if SHOWPROCESS
+#if SHOW_PROGRESS
 					PrintArray(list);
 #endif
 					count++;
@@ -96,16 +91,15 @@ void quicksort_nostack(int list[]) {
 }
 
 void QuickSort(int list[], int left, int right) { //재귀문 사용
-	if (left < right) {
-		int q = Partition(list, left, right);
+	if (left >= right) return; //블록 탈출을 빨리 하는게 더 속도가 빠름.
+	int q = Partition(list, left, right);
 
-		QuickSort(list, left, q - 1);
-		QuickSort(list, q + 1, right);
-	}
+	QuickSort(list, left, q);
+	QuickSort(list, q + 1, right);
 }
 
 void Quick(int* ToSort) {
-	//quicksort(ToSort);
-	quicksort_nostack(ToSort);
+	quicksort(ToSort);
+	//quicksort_nostack(ToSort);
 	//QuickSort(ToSort, 0, ARRAYSIZE - 1);
 }
