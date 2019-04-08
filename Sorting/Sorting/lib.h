@@ -15,8 +15,8 @@
 #define ISRANDOM TRUE			//원소의 값을 고정된 값으로 실험하고 싶은경우 FALSE로
 
 #define BENCHMARK FALSE			//정렬 알고리즘 벤치마킹(미구현)
-#define NOLINE TRUE
-#define NOARRAY TRUE
+#define NOLINE FALSE
+#define NOARRAY FALSE
 
 extern int count;
 extern int* array;

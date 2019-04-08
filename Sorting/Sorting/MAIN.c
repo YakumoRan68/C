@@ -18,12 +18,12 @@ void main() {
 #endif
 
 	//Bubble(ToSort);
-	//Heap(ToSort);
+	Heap(ToSort);
 	//Insertion(ToSort);
 	//Merge(ToSort);
 	//Quick(ToSort);
 	//Selection(ToSort);
-	Test();
+	//Test();
 
 	PrintLineWithName("정렬 된 배열");
 	PrintArray(ToSort);
