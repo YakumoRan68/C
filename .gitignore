@@ -389,3 +389,5 @@ ASALocalRun/
 # Text file
 *.txt
 *.bin
+Sorting/Sorting/Sorting.vcxproj
+*.vcxproj
