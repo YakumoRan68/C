@@ -97,22 +97,21 @@ void main() {
 
 	printf("\nwindmill\n");
 
-	for (int i = 0; i < MAX * 2 + 1; i++) {
-		for (int j = 0; j < MAX * 2; j++)
-			abs(i - MAX) < abs(j - MAX + 1) ? printf(" ") : printf("*");
-			//T T T F F F T / T T F F F T T / T F F F T T T / F F F F F F F / F F T F T T T
+	//1234321
+	//1230321
+	//***   * (|y| % 4 >= 1, <= 1)
+	// **  ** (|y|     >= 2, <= 2)
+	//  * *** (|y|     >= 3, <= 3)
+	//        (|y|     >= 4, <= 4)
+	//  * *** (|y|     >= 3, <= 3)
+	// **  ** (|y|     >= 2, <= 2)
+	//***   * (|y|     >= 1, <= 1)
 
-			//3, 3, 3, 3, 3, 3, 3 / 2, 2, 2, 2, 2, 2, 2 / 
-			//
-			//T  T  T  F  F  F  T / F  T  T  F  F  T  T / F  F  T  F  T  T  T / F  F  F  F  F  F  F / F  F  T  F  T  T  T / F  T  T  F  F  T  T 
+	for (int i = 0; i < MAX * 2 + 1; i++) {
+		for (int j = 0; j < MAX * 2; j++) {
+			(j < MAX ? j % (MAX + 1) >= i : MAX - abs(MAX - j) % (MAX + 1) <= MAX - abs(MAX - i)) ? printf("*") : printf(" ");
+		}
+			
 		printf("\n");
 	}
-
-	//***   *
-	// **  **
-	//  * ***
-	//
-	//  * ***
-	// **  **
-	//***   *
 }
