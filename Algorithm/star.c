@@ -99,7 +99,7 @@ void main() {
 
 	//1234321
 	//1230321
-	//***   * (|y| % 4 >= 1, <= 1)
+	//***   * (|y| % 5 >= 1, <= 1)
 	// **  ** (|y|     >= 2, <= 2)
 	//  * *** (|y|     >= 3, <= 3)
 	//        (|y|     >= 4, <= 4)
@@ -108,10 +108,8 @@ void main() {
 	//***   * (|y|     >= 1, <= 1)
 
 	for (int i = 0; i < MAX * 2 + 1; i++) {
-		for (int j = 0; j < MAX * 2; j++) {
-			(j < MAX ? j % (MAX + 1) >= i : MAX - abs(MAX - j) % (MAX + 1) <= MAX - abs(MAX - i)) ? printf("*") : printf(" ");
-		}
-			
+		for (int j = 0; j < MAX * 2 + 1; j++)
+			(j < MAX ? MAX - abs(MAX - i) < j % (MAX + 1) + 1  : MAX - abs(MAX - i) + 1 > MAX - abs(MAX - j) % (MAX + 1) && i != MAX) ? printf("*") : printf(" ");
 		printf("\n");
 	}
 }
