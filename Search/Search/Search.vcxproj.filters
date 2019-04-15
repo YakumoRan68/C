@@ -21,6 +21,18 @@
     <ClCompile Include="Library.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Linear.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Binary.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Sort.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Tree.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lib.h">
