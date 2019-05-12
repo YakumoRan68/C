@@ -80,8 +80,11 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <SDLCheck>true</SDLCheck>
+      <SDLCheck>false</SDLCheck>
     </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -115,7 +118,7 @@
     <ClCompile Include="Linear.c" />
     <ClCompile Include="Main.c" />
     <ClCompile Include="Sort.c" />
-    <ClCompile Include="Tree.c" />
+    <ClCompile Include="TreeBinary.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lib.h" />
