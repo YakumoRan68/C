@@ -60,7 +60,7 @@ void printTree(struct node* root) {
 	}
 }
  
-void FreeTree(struct node* node) { 
+void FreeTree(struct node* node) { //±íÀÌ ¿ì¼± Å½»ö(DFS)
 	if (node != NULL) {
 		FreeTree(node->right);
 		FreeTree(node->left);

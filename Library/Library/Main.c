@@ -1,6 +1,10 @@
 #include "lib.h"
 
+#define ARRAYSIZE 15
+
 void main() {
-	int a = RandRange(1, 5);
-	printf("%d", a);
+	int *arr = (int *)malloc(sizeof(int) * ARRAYSIZE);
+	GetRandomArray(arr, ARRAYSIZE, 0, 100);
+
+	PrintArray(arr, ARRAYSIZE);
 }
