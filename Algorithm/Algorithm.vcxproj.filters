@@ -15,10 +15,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="star.c">
+    <ClCompile Include="MatrixPath.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="fibo.c">
+    <ClCompile Include="Fibonacci.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Star.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="LCS.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
