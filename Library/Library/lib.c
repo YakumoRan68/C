@@ -2,16 +2,16 @@
 
 #define RAND_MAX 32767
 
-int num = 0;
-void Shuffle() {
-	srand(time(NULL) + num);
-	num = num * 46781267 + 9788973;
-}
-
-void Swap(int *a, int *b) {
+void Swap(int* a, int* b) {
 	int temp = *a;
 	*a = *b;
 	*b = temp;
+}
+
+int num = 0;
+void Shuffle() {
+	srand(time(NULL) + num);
+	num = num * 14239102 + 23058298;
 }
 
 double GetRandom() { // [0, 1) 범위의 난수를 생성
